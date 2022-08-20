@@ -9,7 +9,7 @@ function App() {
   const [selectedIndexs, setSelectedIndexs] = useState({ 0: '', 1: '', 2: '' })
   const handleChange = (id, idx) => {
     setSelectedIndexs((prev) => {
-      return { ...prev, [idx]: id }
+      return { ...prev, [idx]: id } 
     })
   }
   const handleSubmit = (e) => {
