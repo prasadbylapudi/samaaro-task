@@ -13,7 +13,7 @@ function Dropdown(props) {
     <div className="container">
       <div className="dropdown">
         <label>
-          Select a value:
+          <h3>Select a value:</h3>
           <div className="select">
             <select value={value} onChange={onChange}>
               <option
