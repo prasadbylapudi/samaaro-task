@@ -1,8 +1,10 @@
 import Dropdown from './components/Dropdown'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
+import './App.css'
 function App() {
-  const [arr, setArr] = useState([false, false, false, false, false])
-  const [arrValues, setArrValues] = useState(['A', 'B', 'C', 'D', 'E'])
+  // const [arr, setArr] = useState([false, false, false, false, false])
+  const arrValues = ['A', 'B', 'C', 'D', 'E']
+  // const [arrValues, setArrValues] = useState(['A', 'B', 'C', 'D', 'E'])
   const [finalSubmit, setFinalSubmit] = useState(false)
   const [selectedIndexs, setSelectedIndexs] = useState({ 0: '', 1: '', 2: '' })
   const handleChange = (id, idx) => {
@@ -18,7 +20,7 @@ function App() {
   }
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form className="forms" onSubmit={handleSubmit}>
         <Dropdown
           arr={selectedIndexs}
           handleChange={handleChange}
@@ -37,12 +39,18 @@ function App() {
           key={2}
           idx={2}
         />
-        <button type="submit"> Submit </button>
+        <div className="submitBtn">
+          <button type="submit"> Submit </button>
+        </div>
       </form>
-      <div>
+      <div className="result">
         {finalSubmit
           ? Object.values(selectedIndexs).map((val, idx) => {
-              return <div key={idx}>{arrValues[val]}</div>
+              return (
+                <div key={idx}>
+                  <h1>{arrValues[val]}</h1>
+                </div>
+              )
             })
           : null}
       </div>
